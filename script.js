@@ -99,4 +99,30 @@ $('.yes').on("click", function(){
   $('#f21').css('display', 'none');
   $('#f22').css('display', 'flex');
   });
- 
+  $(document).ready(function() {
+    var audioInstrumental = document.getElementById('audioInstrumental');
+
+    // Reproducir audio instrumental al hacer clic en "Estoy Bien!! Dale te ayudo!!!"
+    $('.si').on('click', function() {
+        audioInstrumental.play().catch(function(error) {
+            console.log("No se pudo reproducir el audio: " + error);
+        });
+    });
+
+    // Detener el audio al hacer clic en "seguir leyendo."
+    $('.go').on('click', function() {
+        audioInstrumental.pause();
+    });
+
+    // Reproducir el audio al hacer clic en "vuelves a abrir las otras cajas."
+    $('.carta').on('click', function() {
+        audioInstrumental.play().catch(function(error) {
+            console.log("No se pudo reproducir el audio: " + error);
+        });
+    });
+
+    // Detener el audio al hacer clic en "¿s-supongo que sí...?"
+    $('.meme2').on('click', function() {
+        audioInstrumental.pause();
+    });
+});
